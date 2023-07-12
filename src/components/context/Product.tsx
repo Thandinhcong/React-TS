@@ -14,7 +14,7 @@ const ProductProvider = ({ children }: any) => {
         setIsLoading(true);
         await pause(1000);
         try {
-            const data = await instance.get("http://localhost:3000/products")
+            const data = await instance.get('/products/')
             setProduct(data as any);
         } catch (error: any) {
             setError(error.message);

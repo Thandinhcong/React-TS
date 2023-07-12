@@ -1,14 +1,16 @@
 import React from 'react'
 
 type Props = {
-    primary?: string
-    danger?: string
-    children: React.ReactNode
+    primary?: boolean
+    danger?: boolean
+    children: React.ReactNode,
+    onClick?: () => void;
 }
 
-const Button = ({ primary, danger, children }: Props) => {
+const Button = ({ primary, danger, children, onClick }: Props) => {
     return (
         <button
+            onClick={onClick}
             className={`
         btn btn-primary
         ${primary ? "btn btn-primary" : ""}
@@ -18,5 +20,4 @@ const Button = ({ primary, danger, children }: Props) => {
             {children}</button>
     )
 }
-
-export default Button
+export default Button;

@@ -9,13 +9,13 @@ const Counter = () => {
         <div>
             <div>
                 Counter:{counts}
-                <button onClick={() => increment()}>
+                <Button primary onClick={() => increment()}>
                     inclement
-                </button>
+                </Button>
 
-                <button onClick={() => decrement()}>
+                <Button primary onClick={() => decrement()}>
                     decrement
-                </button>
+                </Button>
             </div>
         </div >
     )
