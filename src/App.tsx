@@ -1,11 +1,15 @@
 
 import Counter from './components/counter'
+import ProductList from './components/productList'
 
 
 function App() {
 
   return (
-    <div><Counter /></div>
+    <div>
+      <Counter />
+      <ProductList />
+    </div>
   )
 }
 
