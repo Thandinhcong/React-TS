@@ -1,4 +1,3 @@
-
 import { useContext, useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
 import { ProductContext } from "../context/Product";

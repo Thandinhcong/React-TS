@@ -4,7 +4,6 @@ import ProductList from './components/productList'
 
 
 function App() {
-
   return (
     <div>
       <Counter />

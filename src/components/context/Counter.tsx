@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react'
+import { createContext, useState } from 'react'
 
 
 export const CounterContext = createContext({} as any)
@@ -13,4 +13,4 @@ const CounterProvider = ({ children }: any) => {
     )
 }
 
-export default CounterProvider 
+export default CounterProvider;

@@ -1,7 +1,7 @@
-import React, { createContext, useState } from 'react'
+import { createContext, useState } from 'react'
 import { instance } from '../../instances/instance';
 import { pause } from '../../utils/pause';
-import axios from 'axios';
+
 
 export const ProductContext = createContext({} as any);
 
