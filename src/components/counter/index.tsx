@@ -1,12 +1,9 @@
 import { useContext } from 'react'
 import { CouterContext } from '../../context/Couter';
 
-
-
 const Counter = () => {
     const { state, dispatch } = useContext(CouterContext);
     console.log(state);
-
     return (
         <div>
             <div>
