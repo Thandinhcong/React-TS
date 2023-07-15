@@ -5,7 +5,6 @@ import Button from '../button';
 
 const Counter = () => {
     const { state, dispatch } = useContext(CouterContext);
-    console.log(state);
     return (
         <div>
             <div>

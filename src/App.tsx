@@ -1,5 +1,6 @@
 
 import Counter from './components/counter'
+import ProductList from './components/productList'
 // import ProductList from './components/productList'
 
 
@@ -7,7 +8,7 @@ function App() {
   return (
     <div>
       <Counter />
-      {/* <ProductList /> */}
+      <ProductList />
     </div>
   )
 }
