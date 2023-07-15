@@ -12,7 +12,6 @@ const Counter = () => {
                 <Button primary onClick={() => dispatch({ type: "INCREMENT" })}>
                     inclement
                 </Button>
-
                 <Button primary onClick={() => dispatch({ type: "DECREMENT" })}>
                     decrement
                 </Button>

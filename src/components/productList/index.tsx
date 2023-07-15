@@ -1,9 +1,6 @@
 import { useContext, useEffect } from "react";
 import { ProductContext } from "../../context/Products";
 import { instance } from "../../instances/instance";
-import Button from "../button";
-import Skeleton from "react-loading-skeleton";
-
 const ProductList = () => {
     const { state, dispatch } = useContext(ProductContext);
     console.log(state);
@@ -28,15 +25,30 @@ const ProductList = () => {
         } finally {
         }
     };
-    if (state.isLoading) return <Skeleton count={3} />;
-    if (state.error) return <div>{state.error}</div>;
+    const updateProduct = async (product: any) => {
+        try {
+            const data = await instance.put("/products/" + product.id, product);
+            dispatch({ type: "UPDATE_PRODUCT", payload: data });
+        } catch (error: any) {
+        } finally {
+        }
+    };
+    const deleteProduct = async (id: any) => {
+        try {
+            const data = await instance.delete("/products/" + id);
+            dispatch({ type: "REMOVE_PRODUCT", payload: data });
+        } catch (error: any) {
+        } finally {
+        }
+    };
     return (
         <div>
             {state?.products?.map((product: any) => (
                 <div key={product.id}>{product.name}</div>
             ))}
-
             <button onClick={() => addProduct({ name: "Product ADDed" })}>Thêm</button>
+            <button onClick={() => updateProduct({ name: "Productupdate", id: 3 })}>Cập nhật</button>
+            <button onClick={() => deleteProduct(5)}>delete</button>
         </div>
     );
 };

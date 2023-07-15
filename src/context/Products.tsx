@@ -10,7 +10,6 @@ const innitialState = {
     products: [],
     isLoading: false,
     error: "",
-
 }
 
 const ProductProvider = ({ children }: Props) => {
