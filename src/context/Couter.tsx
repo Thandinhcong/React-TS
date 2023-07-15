@@ -1,14 +1,15 @@
-import React, { useReducer, createContext } from 'react'
+import { useReducer, createContext } from 'react'
 
-export const CouterContext = createContext({} as any);
-type counterReducerProps = {
-    children: React.ReactNode
+
+// export type CounterProps = {
+//     children: React.ReactNode
+// }
+
+export const CouterContext = createContext({} as any)
+const initalState = {
+    count: 0
 }
-const initialState = { count: 0 };
-
-const couterReducer = (state: any, action: any) => {
-    console.log({ action });
-
+const reducer = (state: any, action: any) => {
     switch (action.type) {
         case "INCREMENT": {
             return {
@@ -25,18 +26,15 @@ const couterReducer = (state: any, action: any) => {
                 count: state.count + action.payload
             }
         }
-        default:
-            state;
+        default: return state;
     }
 }
-const CounterProvider = ({ children }: counterReducerProps) => {
-    const [state, dispatch] = useReducer(couterReducer, initialState) as any;
-
+const CounterProvider = ({ children }: any) => {
+    const [state, dispatch] = useReducer(reducer, initalState);
     return (
         <CouterContext.Provider value={{ state, dispatch }}>
             {children}
         </CouterContext.Provider>
     )
 }
-
-export default CounterProvider
+export default CounterProvider;

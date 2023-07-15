@@ -1,5 +1,7 @@
 import { useContext } from 'react'
 import { CouterContext } from '../../context/Couter';
+import Button from '../button';
+
 
 const Counter = () => {
     const { state, dispatch } = useContext(CouterContext);
@@ -8,16 +10,16 @@ const Counter = () => {
         <div>
             <div>
                 Counter:{state.count}
-                <button onClick={() => dispatch({ type: "INCREMENT" })}>
+                <Button primary onClick={() => dispatch({ type: "INCREMENT" })}>
                     inclement
-                </button>
+                </Button>
 
-                <button onClick={() => dispatch({ type: "DECREMENT" })}>
+                <Button primary onClick={() => dispatch({ type: "DECREMENT" })}>
                     decrement
-                </button>
-                <button onClick={() => dispatch({ type: "INCREASE", payload: 10 })}>
+                </Button>
+                <Button primary onClick={() => dispatch({ type: "INCREASE", payload: 10 })}>
                     decrement
-                </button>
+                </Button>
             </div>
         </div >
     )
