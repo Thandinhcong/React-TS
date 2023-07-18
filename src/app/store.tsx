@@ -5,7 +5,7 @@ const initialState = {
 }
 
 const reduce = (state = initialState, action: any) => {
-
+    console.log("state :", state);
     return produce(state, draftState => {
         switch (action.type) {
             case "INCREMENT":
