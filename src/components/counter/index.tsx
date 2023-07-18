@@ -1,14 +1,14 @@
-import { useContext } from 'react'
-import { CouterContext } from '../../context/Couter';
-import Button from '../button';
 
+import Button from '../button';
+import { useDispatch, useSelector } from "react-redux"
 
 const Counter = () => {
-    const { state, dispatch } = useContext(CouterContext);
+    const { count } = useSelector((state: any) => state);
+    const dispatch = useDispatch();
     return (
         <div>
             <div>
-                Counter:{state.count}
+                Counter:{count}
                 <Button primary onClick={() => dispatch({ type: "INCREMENT" })}>
                     inclement
                 </Button>

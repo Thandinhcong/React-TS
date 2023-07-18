@@ -1,13 +1,12 @@
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import "bootstrap/dist/css/bootstrap.min.css"
-import CounterProvider from './context/Couter.tsx'
-import ProductProvider from './context/Products.tsx'
+import store from './app/store.tsx'
+import { Provider } from 'react-redux'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <ProductProvider>
-    <CounterProvider>
-      <App />
-    </CounterProvider>
-  </ProductProvider>
+  <Provider store={store}>
+    <App />
+  </Provider>
+
 )
