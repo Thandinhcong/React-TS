@@ -3,7 +3,7 @@ import Button from '../button';
 import { useDispatch, useSelector } from "react-redux"
 
 const Counter = () => {
-    const { count } = useSelector((state: any) => state);
+    const { count } = useSelector((state: any) => state);// state=0
     console.log("count :", count);
 
     const dispatch = useDispatch();
