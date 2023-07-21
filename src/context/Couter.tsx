@@ -1,10 +1,5 @@
 import { useReducer, createContext } from 'react'
 
-
-// export type CounterProps = {
-//     children: React.ReactNode
-// }
-
 export const CouterContext = createContext({} as any)
 const initalState = {
     count: 0
