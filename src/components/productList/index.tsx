@@ -14,7 +14,14 @@ const ProductList = () => {
     return (
         <div>
             {products.map((product: any) => (
-                <div key={product.id}>{product.name}</div>
+                <div key={product.id}>
+                    {product.name}
+                    <button
+                        onClick={
+                            () => dispatch({ type: "cart/add", payload: { ...product, quantity: 1 } })
+                        }>
+                        add to cart</button>
+                </div>
             ))}
             <Button success onClick={() => dispatch(addProduct({ name: "Product ADDed" }))}>Thêm</Button>
             <Button warning onClick={() => dispatch(updateProduct({ name: "Product update", id: 3 }))}>Cập nhật</Button>

@@ -12,11 +12,17 @@
     },
     {
       "name": "Product ADDed",
-      "id": 4
+      "id": 4,
+      "price": "300"
     },
     {
       "name": "Product ADDed",
-      "id": 5
+      "id": 5,
+      "price": "400"
+    },
+    {
+      "name": "Product ADDed",
+      "id": 6
     }
   ]
 }

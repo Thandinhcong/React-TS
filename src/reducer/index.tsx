@@ -6,8 +6,6 @@ const initialState = {
     error: ""
 } as { products: any[], isLoading: boolean, error: string }
 const productReducer = (state = initialState, action: any) => {
-
-    console.log(action);
     return produce(state, drafState => {
         switch (action.type) {
             case "products/fetchProducts": {
