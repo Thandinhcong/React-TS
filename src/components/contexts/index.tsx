@@ -1,25 +1,18 @@
-import React, { createContext, useReducer } from 'react';
-import { produce } from "immer"
-import productReducer from '../../reducers';
+import { produce } from "immer";
+import { createContext, useReducer } from "react"
+import productReducer from "../../reducers";
+const ProductContext = createContext([] as any);
+
 const initialState = {
     products: [],
-    isLoading: false,
-    error: "",
-
 }
-const ProductContext = createContext([])
 
-console.log("product contexxt :", ProductContext);
-
-const ProductProvider = ({ children }: any) => {
-    const [state, dispatch] = useReducer(produce(productReducer), initialState);
-    console.log("state :", state);
-
+export const ProductProvider = ({ children }: any) => {
+    const [state, dispatch] = useReducer(produce(productReducer), initialState)
     return (
-        < ProductContext.Provider value={{ state, dispatch } as any}>
+        <ProductContext.Provider value={{ state, dispatch }}>
             {children}
-        </ ProductContext.Provider >
+        </ProductContext.Provider>
     )
 }
-export { ProductProvider }
-export default ProductContext;
+export default ProductContext

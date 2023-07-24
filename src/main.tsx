@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import { ProductProvider } from './components/contexts/index.tsx'
 
 
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <ProductProvider>
     <App />
