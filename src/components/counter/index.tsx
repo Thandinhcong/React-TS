@@ -1,22 +1,23 @@
 
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { decrement, increase, increment } from '../../slices/Counter';
 import Button from '../button';
-import { useDispatch, useSelector } from "react-redux"
 
 const Counter = () => {
-    const { count } = useSelector((state: any) => state);// state=0
-    const dispatch = useDispatch();
+    const { count } = useAppSelector((state: any) => state.counter);
+    const dispatch = useAppDispatch();
     return (
         <div>
             <div>
                 Counter:{count}
-                <Button success onClick={() => dispatch({ type: "INCREMENT" })}>
+                <Button success onClick={() => dispatch(increment())}>
                     inclement
                 </Button>
-                <Button warning onClick={() => dispatch({ type: "DECREMENT" })}>
+                <Button warning onClick={() => dispatch(decrement())}>
                     decrement
                 </Button>
-                <Button danger onClick={() => dispatch({ type: "INCREASE", payload: 10 })}>
-                    decrement
+                <Button danger onClick={() => dispatch(increase(10))}>
+                    increase
                 </Button>
             </div>
         </div >

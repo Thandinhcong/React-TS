@@ -1,14 +1,14 @@
 
-import Cart from './components/cart'
+// import Cart from './components/cart'
 import Counter from './components/counter'
-import ProductList from './components/productList'
+// import ProductList from './components/productList'
 
 function App() {
   return (
     <div>
       <Counter />
-      <ProductList />
-      <Cart />
+      {/* <ProductList />
+      <Cart /> */}
     </div>
   )
 }
