@@ -21,7 +21,8 @@ const productSlice = createSlice({
         })
         //adding
         builder.addCase(addProduct.fulfilled, (state, action) => {
-            state.products.push(action.payload)
+            const product = action.payload
+            state.products.push(product)
         })
         // updating
         builder.addCase(updateProduct.fulfilled, (state, action) => {

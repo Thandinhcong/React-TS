@@ -5,7 +5,6 @@ import { addProduct, deleteProduct, fetchProducts, updateProduct } from "../../a
 import { RootState } from "../../app/store";
 const ProductList = () => {
     const dispatch = useAppDispatch();
-
     const { products } = useAppSelector((state: RootState) => state.products);
 
     useEffect(() => {
