@@ -13,6 +13,7 @@ const Button = ({ success, warning, danger, children, onClick }: Props) => {
         <button
             onClick={onClick}
             className={`
+            ms-2
         btn btn-primary
         ${success ? "btn btn-success" : ""}
         ${danger ? "btn btn-danger" : ""}

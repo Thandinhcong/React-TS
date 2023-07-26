@@ -6,7 +6,12 @@ function App() {
   return (
     <div>
       <Counter />
-      <ProductList />
+
+      <br />
+      <h2 className='text-center'>Products List :</h2>
+      <div className='text-center'>
+        <ProductList />
+      </div>
     </div>
   )
 }

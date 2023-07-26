@@ -2,12 +2,9 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import { instance } from "../instances/instance";
 import { IProducts } from "../interfaces/product";
 
-
-
 export const fetchProducts = createAsyncThunk("products/fetchProducts", async () => {
     const data: any = await instance.get("/products");
     console.log(data);
-
     return data
 })
 export const addProduct = createAsyncThunk("products/addProduct", async (product: IProducts) => {
