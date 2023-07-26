@@ -1,38 +1,48 @@
-import { useEffect } from "react";
-import Button from "../button";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { addProduct, deleteProduct, fetchProducts, updateProduct } from "../../actions/products";
-import { RootState } from "../../app/store";
+import React, { useEffect } from 'react'
+import { useAppDispatch, useAppSelector } from '../../app/hooks'
+import { RootState } from '../../app/store';
+import { addProduct, deleteProduct, fetchProducts, updateProduct } from '../../actions/products';
+import { IProducts } from '../../interfaces/product';
+import Button from '../button';
+
+
 const ProductList = () => {
     const dispatch = useAppDispatch();
     const { products } = useAppSelector((state: RootState) => state.products);
-
     useEffect(() => {
-        dispatch(fetchProducts());
-    }, []);
+        dispatch(fetchProducts())
+    }, [])
 
     return (
         <div>
-            {products?.map((product: any) => (
-                <div key={product.id} className=" d-flex justify-content-center">
-                    <div className="text-danger m-2">
-                        Name : {product.name}
+            {products?.map((item) => (
+                <div className='d-flex justify-content-center m-3'>
+                    <div>{item?.name}</div>
+                    <div>
+                        {item?.price}
                     </div>
-                    <div className="text-danger m-2">
-                        Price :{product.price}
-                    </div>
-                    <button
-                        onClick={
-                            () => dispatch({ type: "cart/add", payload: { ...product, quantity: 1 } })
-                        }>
-                        add to cart</button>
                 </div>
             ))}
-            <Button success onClick={() => dispatch(addProduct({ name: "Product Added", price: 1000 }))}>Thêm</Button>
-            <Button warning onClick={() => dispatch(updateProduct({ name: "Product update", price: 2000, id: 3 }))}>Cập nhật</Button>
-            <Button danger onClick={() => dispatch(deleteProduct(3))}>delete</Button>
+            <Button
+                danger
+                onClick={() => dispatch(addProduct({ name: "product add", price: 1000 }))}
+            >
+                Add
+            </Button>
+            <Button
+                warning
+                onClick={() => dispatch(updateProduct({ name: "product updated", price: 2000, id: 3 }))}
+            >
+                update
+            </Button>
+            <Button
+                danger
+                onClick={() => dispatch(deleteProduct(3))}
+            >
+                delete
+            </Button>
         </div>
-    );
-};
+    )
+}
 
-export default ProductList;
+export default ProductList

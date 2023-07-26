@@ -3,8 +3,8 @@ import counterReducer from '../slices/Counter'
 import { productReducer } from '../slices/Products';
 const store = configureStore({
     reducer: {
-        counter: counterReducer
-        , products: productReducer
+        counter: counterReducer,
+        products: productReducer
     }
 })
 

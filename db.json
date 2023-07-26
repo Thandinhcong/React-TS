@@ -9,26 +9,6 @@
       "id": 2,
       "name": "Product B",
       "price": 200
-    },
-    {
-      "name": "Product Added",
-      "price": 1000,
-      "id": 4
-    },
-    {
-      "name": "Product Added",
-      "price": 1000,
-      "id": 5
-    },
-    {
-      "name": "Product Added",
-      "price": 1000,
-      "id": 6
-    },
-    {
-      "name": "Product Added",
-      "price": 1000,
-      "id": 7
     }
   ]
 }
