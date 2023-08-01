@@ -3,6 +3,8 @@ import Button from "../button";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { addProduct, deleteProduct, fetchProducts, updateProduct } from "../../actions/products";
 import { RootState } from "../../app/store";
+import { add } from "../../slices/cart";
+import Cart from "../cart";
 const ProductList = () => {
     const dispatch = useAppDispatch();
     const { products } = useAppSelector((state: RootState) => state.products);
@@ -23,7 +25,7 @@ const ProductList = () => {
                     </div>
                     <button
                         onClick={
-                            () => dispatch({ type: "cart/add", payload: { ...product, quantity: 1 } })
+                            () => dispatch(add({ ...product, quantity: 1 }))
                         }>
                         add to cart</button>
                 </div>
@@ -31,6 +33,7 @@ const ProductList = () => {
             <Button success onClick={() => dispatch(addProduct({ name: "Product Added", price: 1000 }))}>Thêm</Button>
             <Button warning onClick={() => dispatch(updateProduct({ name: "Product update", price: 2000, id: 3 }))}>Cập nhật</Button>
             <Button danger onClick={() => dispatch(deleteProduct(3))}>delete</Button>
+            <Cart />
         </div>
     );
 };
