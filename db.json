@@ -3,42 +3,32 @@
     {
       "id": 1,
       "name": "Product A",
-      "price": 100
+      "price": 100,
+      "description": "Mô tả sản phẩm A"
     },
     {
       "id": 2,
       "name": "Product B",
-      "price": 200
+      "price": 200,
+      "description": "Mô tả sản phẩm B"
     },
     {
-      "name": "Product Added",
+      "name": "Product C",
       "price": 1000,
+      "description": "Mô tả sản phẩm c",
       "id": 4
     },
     {
-      "name": "Product Added",
-      "price": 1000,
+      "name": "Sản phẩm C",
+      "price": "10000",
+      "description": "Mô tả sản phẩm C  rất chi là ok",
       "id": 5
     },
     {
-      "name": "Product Added",
-      "price": 1000,
+      "name": "Sản Phẩm C",
+      "price": "2000",
+      "description": "Mô tả sản Phẩm c rất tốt",
       "id": 6
-    },
-    {
-      "name": "Product Added",
-      "price": 1000,
-      "id": 7
-    },
-    {
-      "name": "Product Added",
-      "price": 1000,
-      "id": 8
-    },
-    {
-      "name": "Product Added",
-      "price": 1000,
-      "id": 9
     }
   ]
 }
