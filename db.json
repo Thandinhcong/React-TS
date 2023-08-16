@@ -4,31 +4,22 @@
       "id": 1,
       "name": "Product A",
       "price": 100,
-      "description": "Mô tả sản phẩm A"
+      "description": "Mô tả sản phẩm A",
+      "image": "haha"
     },
     {
       "id": 2,
       "name": "Product B",
       "price": 200,
-      "description": "Mô tả sản phẩm B"
+      "description": "Mô tả sản phẩm B",
+      "image": "haha"
     },
     {
       "name": "Product C",
       "price": 1000,
       "description": "Mô tả sản phẩm c",
+      "image": "haha",
       "id": 4
-    },
-    {
-      "name": "Sản phẩm C",
-      "price": "10000",
-      "description": "Mô tả sản phẩm C  rất chi là ok",
-      "id": 5
-    },
-    {
-      "name": "Sản Phẩm C",
-      "price": "2000",
-      "description": "Mô tả sản Phẩm c rất tốt",
-      "id": 6
     }
   ]
 }

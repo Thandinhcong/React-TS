@@ -18,12 +18,12 @@ const ProductList = () => {
             image
         }
     })
-    const columns = [
+
+    const columns: any = [
         {
             key: "name",
             title: 'Name',
             dataIndex: 'name',
-            filterMode: 'tree',
         },
         {
             key: "price",
@@ -43,20 +43,17 @@ const ProductList = () => {
         {
             key: "actions",
             title: 'actions',
-            dataIndex: 'address',
-            render: (id) => {
-                console.log(id);
-
+            render: ({ key: id }: any) => {
                 return (
                     <>
                         <Popconfirm
                             placement='topLeft'
                             title={"Có muốn xóa không em?"}
-                            onConfirm={() => confirm(id)}
+                            onConfirm={() => removeProduct(id)}
                             cancelText="no"
                             okText="yes"
                         >
-                            <Button onClick={() => removeProduct(id)} danger type='primary' className='m-2'>Delete</Button>
+                            <Button danger type='primary' className='m-2'>Delete</Button>
 
                         </Popconfirm >
                         <Button type='primary' >Update</Button>
@@ -65,8 +62,6 @@ const ProductList = () => {
             }
         },
     ];
-
-
 
     return (
         <div className='row row-cols-2 '>
