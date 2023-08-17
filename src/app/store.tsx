@@ -12,6 +12,7 @@ import {
 
 import storage from 'redux-persist/lib/storage';
 import productApi, { productReducer } from '../api/ProductApi';
+import CategoriApi, { CategorieReducer } from '../api/CategoriApi';
 
 
 const persistConfig = {
@@ -20,9 +21,10 @@ const persistConfig = {
     whitelist: ['cart']
 }
 const rootReducer = combineReducers({
-    [productApi.reducerPath]: productReducer
+    [productApi.reducerPath]: productReducer,
+    [CategoriApi.reducerPath]: CategorieReducer
 })
-const middleware = [productApi.middleware]
+const middleware = [productApi.middleware, CategoriApi.middleware]
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 export const store = configureStore({

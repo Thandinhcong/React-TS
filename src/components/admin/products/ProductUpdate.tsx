@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { Button, message, Form, Input, Upload, Skeleton, InputNumber } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import type { UploadProps } from 'antd';
-import MenuBar from '../layout/admin/menuBar';
-import { useGetByIdQuery, useUpdateProductMutation } from '../../api/ProductApi';
+import MenuBar from '../../layout/admin/menuBar';
+import { useGetByIdQuery, useUpdateProductMutation } from '../../../api/ProductApi';
 import { useNavigate, useParams } from 'react-router-dom';
 
 

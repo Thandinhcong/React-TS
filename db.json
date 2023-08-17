@@ -4,19 +4,33 @@
       "name": "Product CC",
       "price": 1000,
       "description": "Mô tả sản phẩm C rất ok",
+      "image": "https://dichvudoitien.com/files/sanpham/2/1/jpg/doi-tien-2-usd-may-man.jpg",
       "id": 4
     },
     {
       "name": "Sảm phẩm C",
       "price": 20000,
       "description": "Mô tả sản phẩm C rất tốt",
+      "image": "https://dichvudoitien.com/files/sanpham/2/1/jpg/doi-tien-2-usd-may-man.jpg",
       "id": 5
     },
     {
       "name": "Sản Phẩm D",
       "price": 100000,
       "description": "Mô tả sản phẩm D rất ok",
+      "image": "https://dichvudoitien.com/files/sanpham/2/1/jpg/doi-tien-2-usd-may-man.jpg",
       "id": 6
     }
-  ]
+  ],
+  "categories": [
+    {
+      "name": "Danh mục ABC",
+      "id": 4
+    },
+    {
+      "name": "Danh mục c",
+      "id": 5
+    }
+  ],
+  "users": []
 }

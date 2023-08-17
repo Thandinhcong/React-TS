@@ -1,7 +1,10 @@
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom"
-import ProductList from "./components/admin/ProductList"
-import ProductAdd from "./components/admin/ProductAdd"
-import ProductUpdate from "./components/admin/ProductUpdate"
+import ProductList from "./components/admin/products/ProductList"
+import ProductAdd from "./components/admin/products/ProductAdd"
+import ProductUpdate from "./components/admin/products/ProductUpdate"
+import ListCate from "./components/admin/categories/ListCate"
+import AddCate from "./components/admin/categories/AddCate"
+import UpdateCate from "./components/admin/categories/UpdateCate"
 
 function App() {
   return (
@@ -14,6 +17,11 @@ function App() {
           <Route index element={<ProductList />} />
           <Route path="add" element={<ProductAdd />} />
           <Route path="update/:id" element={<ProductUpdate />} />
+          {/* categories */}
+          <Route path="categories" element={<ListCate />} />
+          <Route path="addCategories" element={<AddCate />} />
+          <Route path="updateCategories/:idCate" element={<UpdateCate />} />
+
         </Route>
       </Routes>
     </BrowserRouter>

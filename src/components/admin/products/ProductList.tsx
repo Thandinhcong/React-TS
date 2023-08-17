@@ -1,7 +1,7 @@
 import React from 'react'
-import MenuBar from '../layout/admin/menuBar'
+import MenuBar from '../../layout/admin/menuBar'
 import { Table, Skeleton, Button, Popconfirm, Image } from 'antd';
-import { useDeleteProductMutation, useGetProductsQuery } from '../../api/ProductApi';
+import { useDeleteProductMutation, useGetProductsQuery } from '../../../api/ProductApi';
 import { Link } from 'react-router-dom';
 
 const ProductList = () => {
@@ -58,7 +58,7 @@ const ProductList = () => {
                                 Delete
                             </Button>
                         </Popconfirm >
-                        <Button type='primary' ><Link to={`/admin/update/${id}`}>update</Link></Button>
+                        <Button type='primary' className='bg-yellow-500'><Link to={`/admin/update/${id}`}>update</Link></Button>
                     </>
                 )
             }
