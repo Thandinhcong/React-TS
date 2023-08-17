@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import { Button, message, Form, Input, Upload, Skeleton } from 'antd';
+import { Button, message, Form, Input, Upload, Skeleton, InputNumber } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import type { UploadProps } from 'antd';
 import MenuBar from '../layout/admin/menuBar';
-import { useAddProductMutation, useGetByIdQuery, useUpdateProductMutation } from '../../api/ProductApi';
+import { useGetByIdQuery, useUpdateProductMutation } from '../../api/ProductApi';
 import { useNavigate, useParams } from 'react-router-dom';
 
 
@@ -97,7 +97,7 @@ const ProductAdd = () => {
                             { required: true, message: 'Please input your price!' }
                         ]}
                     >
-                        <Input />
+                        <InputNumber />
                     </Form.Item>
                     <Upload {...props}
                         className='ml-[200px]' >
@@ -117,7 +117,13 @@ const ProductAdd = () => {
 
                     <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
                         <Button type="primary" danger htmlType="submit">
-                            Submit
+                            {isUpdateLoading ? (
+                                <div className="spinner-border" role="status">
+                                    <span className="visually-hidden">Loading...</span>
+                                </div>
+                            ) :
+                                "Submit"
+                            }
                         </Button>
                     </Form.Item>
                 </Form>
