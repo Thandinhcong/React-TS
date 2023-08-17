@@ -1,18 +1,10 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Product A",
-      "price": 100,
-      "description": "Mô tả sản phẩm A",
-      "image": "haha"
-    },
-    {
-      "id": 2,
-      "name": "Product B",
+      "name": "Product B update",
       "price": 200,
-      "description": "Mô tả sản phẩm B",
-      "image": "haha"
+      "description": "Mô tả sản phẩm B rất ok",
+      "id": 2
     },
     {
       "name": "Product C",

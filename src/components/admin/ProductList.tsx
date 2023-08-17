@@ -1,6 +1,6 @@
 import React from 'react'
 import MenuBar from '../layout/admin/menuBar'
-import { Table, Skeleton, Button, Popconfirm } from 'antd';
+import { Table, Skeleton, Button, Popconfirm, Image } from 'antd';
 import { useDeleteProductMutation, useGetProductsQuery } from '../../api/ProductApi';
 import { Link } from 'react-router-dom';
 
@@ -39,6 +39,7 @@ const ProductList = () => {
             key: "image",
             title: 'image',
             dataIndex: 'image',
+            render: (text: string) => <Image src={text} width={80} />
         },
         {
             key: "actions",
@@ -53,10 +54,11 @@ const ProductList = () => {
                             cancelText="no"
                             okText="yes"
                         >
-                            <Button danger type='primary' className='m-2'>Delete</Button>
-
+                            <Button danger type='primary' className='m-2'>
+                                Delete
+                            </Button>
                         </Popconfirm >
-                        <Button type='primary' >Update</Button>
+                        <Button type='primary' ><Link to={`/admin/update/${id}`}>update</Link></Button>
                     </>
                 )
             }
