@@ -17,6 +17,7 @@ const UpdateCate = () => {
             name: cateData?.name
         })
     }, [cateData])
+    if (isLoading) return <Skeleton />
     const onFinish = (values: any) => {
         updateCate({
             ...values,
@@ -66,7 +67,9 @@ const UpdateCate = () => {
 
                     <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
                         <Button type="primary" danger htmlType="submit">
-                            Submit
+                            {isLoading ? (<div>Đợi tí</div>) : (
+                                "Submit"
+                            )}
                         </Button>
                     </Form.Item>
                 </Form>
