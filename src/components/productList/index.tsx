@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
     const { state, dispatch } = useContext(ProductContext);
-    console.log({ state });
 
     useEffect(() => {
         const fetch_products = async () => {
@@ -23,8 +22,13 @@ const Home = () => {
     }, [])
     const handleDelete = async (id: number) => {
         try {
-            const deleteProduct = await instance.delete("/products/" + id)
-            dispatch({ type: "REMOVE_PRODUCT", payload: deleteProduct })
+            await instance.delete("/products/" + id)
+            console.log(id);
+
+
+            dispatch({ type: "REMOVE_PRODUCT", payload: { id } })
+            console.log(dispatch({ type: "REMOVE_PRODUCT", payload: { id } }));
+
         } catch (error) {
             console.log(error);
 
@@ -66,6 +70,7 @@ const Home = () => {
         },
         {
             title: "actions",
+            key: "actions",
             render: ({ key: id }: any) => {
                 return <>
                     <Popconfirm
