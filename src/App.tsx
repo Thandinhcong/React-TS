@@ -1,7 +1,5 @@
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom"
-import Home from "./components/productList"
-import ProductAdd from "./components/productAdd"
-import Update from "./components/productUpdate"
+import Form from "./components/Form"
 
 
 function App() {
@@ -9,9 +7,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Outlet />}>
-          <Route index element={<Home />} />
-          <Route path="add" element={<ProductAdd />} />
-          <Route path="update/:id" element={<Update />} />
+          <Route index element={<Form />} />
 
         </Route>
         <Route path="/admin" element={<Outlet />}>
