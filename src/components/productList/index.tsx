@@ -1,12 +1,13 @@
-import React, { useContext, useEffect } from 'react'
+import { useContext, useEffect } from 'react'
 import { Table, Image, Skeleton, Popconfirm, Button } from 'antd';
-import { ProductContext } from '../context';
+import { ProductContext } from '../../context';
 import { instance } from '../../instances/instance';
 import { Link } from 'react-router-dom';
 
 
 const Home = () => {
     const { state, dispatch } = useContext(ProductContext);
+    if (state.isLoading) return <Skeleton />
 
     useEffect(() => {
         const fetch_products = async () => {
@@ -23,18 +24,13 @@ const Home = () => {
     const handleDelete = async (id: number) => {
         try {
             await instance.delete("/products/" + id)
-            console.log(id);
-
-
             dispatch({ type: "REMOVE_PRODUCT", payload: { id } })
-            console.log(dispatch({ type: "REMOVE_PRODUCT", payload: { id } }));
-
+            alert("xóa thành công")
         } catch (error) {
             console.log(error);
-
         }
     }
-    if (state.isLoading) return <Skeleton active />
+
     const dataSource = state?.products?.map(({ id, name, price, description, image }) => {
         return {
             key: id,
@@ -43,7 +39,7 @@ const Home = () => {
             description,
             image
         }
-    }) || []
+    })
     const columns: any = [
         {
             title: 'Name',
@@ -84,16 +80,14 @@ const Home = () => {
                             Delete
                         </Button>
                     </Popconfirm >
-                    <Button type='primary' className='bg-yellow-500'><Link to={`/admin/update/${id}`}>update</Link></Button>
+                    <Button type='primary' className='bg-yellow-500'><Link to={`/update/${id}`}>update</Link></Button>
                 </>
             }
         }
     ];
 
-
     return (
         <Table columns={columns} dataSource={dataSource} />
-
     )
 }
 

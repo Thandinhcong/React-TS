@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { IProducts } from '../../interfaces/product'
 import { instance } from '../../instances/instance'
 import { ProductContext } from '../../context'
@@ -6,17 +6,25 @@ import { Button, Form, Input, InputNumber, Upload, } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 const { TextArea } = Input;
 import type { UploadFile } from 'antd/es/upload/interface';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
-const ProductAdd = () => {
+const Update = () => {
     const navigate = useNavigate();
-    const { dispatch, isLoading } = useContext(ProductContext)
+    const { id } = useParams();
+    const { state, dispatch } = useContext(ProductContext)
+    console.log("syaye", state);
 
+    const [form] = Form.useForm();
+    useEffect(() => {
+        form.setFieldsValue({
+            name: state.products.name
+        })
+    }, [])
     const onFinish = async (values: IProducts) => {
         try {
-            const data = await instance.post('/products', values)
-            dispatch({ type: "ADD_PRODUCT", dispatch: data })
-            alert("Thêm thành công");
+            const data = await instance.put('/products/' + values.id, values)
+            dispatch({ type: "UPDATE_PRODUCT", dispatch: data, id })
+            alert("Cập nhật thành công");
             setTimeout(() => {
                 navigate('/')
             }, 1000)
@@ -42,8 +50,9 @@ const ProductAdd = () => {
     ];
     return (
         <div>
-            <h2 className='text-center m-3'>Thêm sản phẩm</h2>
+            <h2 className='text-center m-3'>Cập nhật sản phẩm</h2>
             <Form
+                form={form}
                 name="basic"
                 labelCol={{ span: 8 }}
                 wrapperCol={{ span: 16 }}
@@ -101,4 +110,4 @@ const ProductAdd = () => {
     )
 }
 
-export default ProductAdd
+export default Update

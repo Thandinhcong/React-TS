@@ -1,11 +1,14 @@
 
 
+
 const productReducer = (state: any, action: any) => {
     switch (action.type) {
         case "FETCH_PRODUCTS": {
+            state.isLoading = false
             state.products = action.payload;
             return
         }
+
         case "ADD_PRODUCT": {
             state.products.push(action.payload)
             return
