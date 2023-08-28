@@ -33,5 +33,42 @@
       "id": 5
     }
   ],
-  "users": []
+  "users": [],
+  "works": [
+    {
+      "id": 1,
+      "name": "Lập trình Front-end",
+      "description": "Tuyển lập trình viên front-end yêu cầu html , css javascript",
+      "lever": "senior , middle",
+      "location": "Hà Nội, Hồ chí MInh"
+    },
+    {
+      "id": 5,
+      "name": "Lập trình Front-end",
+      "description": "Tuyển lập trình viên front-end yêu cầu html , css javascript",
+      "lever": "senior , cc",
+      "location": "Hà Nội, Hồ chí MInh"
+    },
+    {
+      "id": 2,
+      "name": "Full Stack",
+      "description": "Tuyển lập trình viên fullstack developer yêu cầu html , css javascript",
+      "lever": "senior , middle",
+      "location": "Hà Nội, Hồ chí MInh"
+    },
+    {
+      "id": 3,
+      "name": "Data engineer",
+      "description": "Tuyển lập trình viên front-end yêu cầu html , css javascript",
+      "lever": "senior , middle",
+      "location": "Hà Nội, Hồ chí MInh"
+    },
+    {
+      "id": 4,
+      "name": "SoftWare engineer",
+      "description": "Tuyển lập trình viên front-end yêu cầu html , css javascript",
+      "lever": "senior , middle",
+      "location": "Hà Nội, Đà Nẵng"
+    }
+  ]
 }

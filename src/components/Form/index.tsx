@@ -1,21 +1,39 @@
-import { createSearchParams, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Form = () => {
-
     const navigate = useNavigate();
-    const params = { sort: 'date', order: 'newest' };
+    const [query, setQuery] = useState("");
+    const [location, setLocation] = useState("");
 
-    const goToPosts = () =>
-        navigate({
-            pathname: '/posts',
-            search: `?${createSearchParams(params)}`,
-        });
+    const handleSubmit = (e: any) => {
+        e.preventDefault();
+        navigate(`/search?query=${query}&location=${location}`);
+    };
 
     return (
         <div>
-            Users
-            <button onClick={goToPosts}>Go to Posts</button>
+            <h1>Tìm kiếm việc làm</h1>
+            <form onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    placeholder="Tìm kiếm công việc"
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                />
+                <select
+                    value={location}
+                    onChange={(e) => setLocation(e.target.value)}
+                >
+                    <option value="">Chọn địa điểm</option>
+                    <option value="Hà Nội">Hà Nội</option>
+                    <option value="Hồ chí Minh">Hồ chí Minh</option>
+                    <option value="Đà Nẵng">Đà Nẵng</option>
+                </select>
+                <button type="submit">Tìm kiếm</button>
+            </form>
         </div>
     );
 };
-export default Form
+
+export default Form;
