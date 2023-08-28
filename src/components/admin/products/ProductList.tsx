@@ -44,7 +44,7 @@ const ProductList = () => {
         {
             key: "actions",
             title: 'actions',
-            render: ({ key: id }: any) => {
+            render: ({ key: id, name }: any) => {
                 return (
                     <>
                         <Popconfirm
@@ -58,7 +58,11 @@ const ProductList = () => {
                                 Delete
                             </Button>
                         </Popconfirm >
-                        <Button type='primary' className='bg-yellow-500'><Link to={`/admin/update/${id}`}>update</Link></Button>
+                        <Button type='primary' className='bg-yellow-500'><Link to={{
+                            pathname: `/admin/update/${id}`,
+                            search: `?cap-nhat-san-pham&Name=${name}`
+                        }
+                        }>update</Link></Button>
                     </>
                 )
             }

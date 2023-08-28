@@ -16,7 +16,10 @@ const ProductAdd = () => {
         addProduct(values)
             .unwrap()
             .then(() => {
-                return navigate('/admin')
+                return navigate({
+                    pathname: "/admin",
+                    search: `?list=danh-sach-san-pham`
+                })
             })
         console.log('Success:', values);
     };

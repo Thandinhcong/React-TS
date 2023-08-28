@@ -28,7 +28,13 @@ const MenuBar = () => {
                         {
                             key: "1",
                             icon: <DashboardOutlined />,
-                            label: <Link to="/admin/" className='text-decoration-none'> Products</Link>,
+                            label: <Link to={
+                                {
+                                    pathname: '/admin/',
+                                    search: `?list=danh-sac-san-pham`,
+
+                                }
+                            } className='text-decoration-none' > Products</Link>,
                         },
                         {
                             key: "2",

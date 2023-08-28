@@ -20,6 +20,12 @@
       "description": "Mô tả sản phẩm D rất ok",
       "image": "https://dichvudoitien.com/files/sanpham/2/1/jpg/doi-tien-2-usd-may-man.jpg",
       "id": 6
+    },
+    {
+      "name": "Sản phẩm a",
+      "price": 2000,
+      "description": "Mô tả sản phẩm Aaaaaa",
+      "id": 7
     }
   ],
   "categories": [
