@@ -42,7 +42,6 @@ const SearchResults = () => {
             ) : (
                 <>
                     <h1>Kết quả tìm kiếm cho: {query}</h1>
-                    <p>Địa điểm: {locationQuery}</p>
                     <ul>
                         {filteredWorks.map((work: any) => (
                             <li key={work.id}>
