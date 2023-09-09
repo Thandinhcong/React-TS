@@ -5,6 +5,7 @@ import type { UploadProps } from 'antd';
 import MenuBar from '../../layout/admin/menuBar';
 import { useGetByIdQuery, useUpdateProductMutation } from '../../../api/ProductApi';
 import { useNavigate, useParams } from 'react-router-dom';
+import Loading from '../../loading';
 
 
 const ProductAdd = () => {
@@ -23,7 +24,7 @@ const ProductAdd = () => {
             image: productData?.image,
         })
     }, [productData])
-    if (isLoading) return <Skeleton loading />
+    if (isLoading) return <Loading />
     const onFinish = (values: any) => {
         updateProduct({
             ...values,

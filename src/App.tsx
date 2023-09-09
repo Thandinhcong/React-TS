@@ -5,12 +5,16 @@ import ProductUpdate from "./components/admin/products/ProductUpdate"
 import ListCate from "./components/admin/categories/ListCate"
 import AddCate from "./components/admin/categories/AddCate"
 import UpdateCate from "./components/admin/categories/UpdateCate"
+import Login from "./components/auths/login"
+import Signup from "./components/auths/signup"
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Outlet />}>
+          <Route path="login" element={<Login />} />
+          <Route path="signup" element={<Signup />} />
 
         </Route>
         <Route path="/admin" element={<Outlet />}>

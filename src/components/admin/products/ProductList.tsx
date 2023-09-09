@@ -3,11 +3,12 @@ import MenuBar from '../../layout/admin/menuBar'
 import { Table, Skeleton, Button, Popconfirm, Image } from 'antd';
 import { useDeleteProductMutation, useGetProductsQuery } from '../../../api/ProductApi';
 import { Link } from 'react-router-dom';
+import Loading from '../../loading';
 
 const ProductList = () => {
     const { data, error, isLoading } = useGetProductsQuery();
     const [removeProduct, { isLoading: isRemoveLoading }] = useDeleteProductMutation();
-    if (isLoading) return <Skeleton />
+    if (isLoading) return <Loading />
     if (error) return <div>error</div>
     const dataSource = data?.map(({ id, name, price, description, image }) => {
         return {

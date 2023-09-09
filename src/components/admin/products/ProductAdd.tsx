@@ -5,13 +5,14 @@ import type { UploadProps } from 'antd';
 import MenuBar from '../../layout/admin/menuBar';
 import { useAddProductMutation } from '../../../api/ProductApi';
 import { useNavigate } from 'react-router-dom';
+import Loading from '../../loading';
 
 
 const ProductAdd = () => {
 
     const [addProduct, { isLoading }] = useAddProductMutation();
     const navigate = useNavigate();
-    if (isLoading) return <Skeleton loading />
+    if (isLoading) return <Loading />
     const onFinish = (values: any) => {
         addProduct(values)
             .unwrap()
@@ -21,7 +22,6 @@ const ProductAdd = () => {
                     search: `?list=danh-sach-san-pham`
                 })
             })
-        console.log('Success:', values);
     };
 
     const onFinishFailed = (errorInfo: any) => {
